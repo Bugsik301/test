@@ -1,0 +1,99 @@
+a {
+    text-decoration: none;
+    color: inherit;
+}
+/* Contact Page */
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+/* Form Section */
+.form-section {
+    flex: 1 1 45%;
+    margin-right: 20px;
+}
+
+.form-section h1 {
+    color: #4CAF4F;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #EBEBEB;
+    border-radius: 5px;
+    background-color: #F5F5F5;
+}
+
+form button {
+    background-color: #4CAF4F;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #79C37B;
+}
+
+/* Info Section */
+.info-section {
+    flex: 1 1 45%;
+}
+
+.info-section h2 {
+    font-size: 24px;
+    color: #4CAF4F;
+}
+
+.info-section p {
+    font-size: 15px;
+    margin: 10px 0;
+}
+
+.contact-box {
+    background-color: #EBEBEB;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.contact-box h3 {
+    color: #4CAF4F;
+    margin-bottom: 10px;
+}
+
+.contact-box strong {
+    color: #000000;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .form-section, .info-section {
+        flex: 1 1 100%;
+        margin-right: 0;
+    }
+}
+
+.header2 {
+    background-color: #4CAF4F;
+    color: #FFFFFF;
+    font-size: 26px;
+    padding: 5px;
+    text-align: center;
+}

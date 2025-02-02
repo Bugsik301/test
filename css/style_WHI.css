@@ -1,0 +1,77 @@
+section {
+    padding: 50px;
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.header2 h2{
+    font-size: 30px;
+}
+
+.temp {
+    list-style-type: none;
+    padding: 0;
+}
+
+.temp li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 20px;
+}
+
+.temp li img {
+    width: 55%; /* Zdjęcia zajmują mniej więcej połowę szerokości ekranu */
+    height: auto;
+    border-radius: 10px; /* Zaokrąglenie rogów */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtelne cieniowanie */
+}
+
+.temp li div {
+    width: 45%; /* Tekst zajmuje drugą połowę szerokości ekranu */
+    padding: 10px;
+    text-align: justify;
+}
+
+.temp li:nth-child(even) {
+    flex-direction: row-reverse; /* Naprzemienne ustawianie zdjęć i tekstu */
+}
+
+.temp li div strong {
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    font-size: 32px; /* Podtytuł zielony */
+    color: #4CAF4F; /* Zielony kolor */
+    margin-bottom: 10px;
+    display: block;
+}
+
+.temp li div p {
+    font-family: 'Inter', sans-serif;
+    font-weight: normal;
+    font-size: 24px; /* Czarny tekst */
+    color: #000000;
+    line-height: 1.6;
+}
+
+#kara {
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    text-align: justify;
+    padding: 20px;
+    margin: 20px 50px;
+    font-size: 24px; /* Podtytuł zielony */
+    color: #4CAF4F; /* Zielony kolor */
+    margin-bottom: 10px;
+    display: block;
+}

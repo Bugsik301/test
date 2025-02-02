@@ -1,0 +1,6 @@
+// script.js
+
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("JavaScript loaded");
+    // Add more interactive JavaScript functionality as needed
+});

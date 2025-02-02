@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Świadectwo Energetyczne Online</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style_contact.css">
+
+    <style>
+        .description {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 24px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px;
+        }
+
+        .card {
+            text-align: center;
+            width: 300px;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: -20px; /* Allows button to overlap */
+            position: relative;
+            z-index: 1;
+            top: -10px; /* Moves the button slightly upwards */
+        }
+
+        .card .button {
+            display: inline-block;
+            background-color: #4CAF4F;
+            color: #FFFFFF;
+            padding: 10px 20px;
+            border-radius: 15px;
+            text-decoration: none;
+            font-size: 18px;
+            position: relative;
+            z-index: 2;
+            top: -5px;
+        }
+
+        .card p {
+            font-size: 18px;
+            margin: 5px 20px 10px;
+            font-weight: 550;
+        }
+
+        .card .inquiry {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #82C784;
+            color: #FFFFFF;
+            padding: 10px 20px;
+            border-radius: 15px;
+            text-decoration: none;
+            font-size: 20px;
+            font-family: 'Inter', Arial, sans-serif;
+            font-weight: 600;
+            gap: 10px;
+            border: none;
+        }
+
+        .card .inquiry img {
+            width: 20%;
+            height: 20%;
+            
+        }
+
+        .card .inquiry:hover {
+            background-color: #79C37B;
+        }
+
+        .header3 {
+            background-color: #4CAF4F;
+            color: #FFFFFF;
+            font-size: 22px;
+            padding: 1px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="navbar-email">
+            <img src="images/email_icon.png" alt="Email Icon"> swiadczenia.energetyczne@bujak.service.pl
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Strona Główna</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
+                <li><a href="who_need_it.html">Kto musi posiadać świadectwo?</a></li>
+            </ul>
+            <a href="order.html" class="btn-order">Zamów</a>
+        </nav>
+    </header>
+
+    <section class="header3">
+        <h2>Świadectwo energetyczne online</h2>
+    </section>
+
+    <section class="description">
+        <p>Zapoznaj się ze szczegółami w opisie i zamów świadectwo energetyczne mieszkania lub bezpłatną wycenę:</p>
+    </section>
+
+    <main>
+        <div class="container">
+           
+            <div class="card">
+                <img src="images/budyneka.jpg" alt="Budynek/Lokal użytkowy">
+                <a href="form.html" class="button">Zamów online</a>
+                <p>Budynek / Lokal użytkowy <br> cena wycena indywidualna <br> czas realizacji 2-5 dni</p>
+                <a href="form.html" class="inquiry">
+                    <img src="images/lupka2.png" alt="Lupka"> Zapytaj o wycenę
+                </a>
+            </div>
+
+            <div class="card">
+                <img src="images/budynekb.jpg" alt="Dom jednorodzinny">
+                <a href="form.html" class="button">Zamów online</a>
+                <p>Dom jednorodzinny <br> cena od 319 zł <br> czas realizacji 2-3 dni</p>
+                <a href="form.html" class="inquiry">
+                    <img src="images/lupka2.png" alt="Lupka"> Zapytaj o wycenę
+                </a>
+            </div>
+
+            <div class="card">
+                <img src="images/budynekc.jpg" alt="Mieszkanie">
+                <a href="form.html" class="button">Zamów online</a>
+                <p>Mieszkanie <br> cena od 219 zł <br> czas realizacji 2-3 dni</p>
+                <a href="form.html" class="inquiry">
+                    <img src="images/lupka2.png" alt="Lupka"> Zapytaj o wycenę
+                </a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
