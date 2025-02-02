@@ -5,11 +5,112 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formularz zamówienia</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        .description {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 90%;
+        }
+        h1 {
+            font-size: 24px;
+            color: #4CAF4F;
+            margin-top: 20px;
+            text-align: center;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+        .form-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .form-group div {
+            flex: 1;
+            min-width: 300px;
+        }
+        input, select, textarea {
+            width: 80%;
+            padding: 15px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: #F0F0F0;
+        }
+
+        .info-text {
+            background-color: #f8f8f8;
+            padding: 10px;
+            border-left: 4px solid #4CAF4F;
+            margin-top: 15px;
+        }
+        .file-upload {
+            border: 2px dashed #4CAF4F;
+            padding: 20px;
+            text-align: center;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .file-upload:hover {
+            background-color: #f9f9f9;
+        }
+       
+        .consent {
+            display: flex;
+            align-items: center;
+            margin-top: 15px;
+        }
+        .consent input {
+            width: auto;
+            margin-right: 10px;
+        }
+        .header3 {
+            background-color: #4CAF4F;
+            color: white;
+            font-size: 22px;
+            padding: 1px;
+            text-align: center;
+        }
+
+        .form-footer {
+            display: flex;
+            justify-content: flex-start;
+            margin-top: 20px;
+        }
+        button {
+            background-color: #4CAF4F;
+            color: white;
+            padding: 15px;
+            border: none;
+            font-size: 15px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        button:hover {
+            background-color: #79C37B;
+        }
+    </style>
+
 </head>
 <body>
     <header>
         <div class="navbar-email">
-            <img src="images/email_icon.png" alt="Smile Icon"> swiadczenia.energetyczne@bujak.service.pl
+            <img src="images/email_icon.png" alt="Email Icon"> swiadczenia.energetyczne@bujak.service.pl
         </div>
         <nav>
             <ul>
@@ -21,31 +122,158 @@
         </nav>
     </header>
 
+    <section class="header3">
+        <h2>Świadectwo energetyczne budynku lub lokalu - wycena</h2>
+    </section>
+
+    <section class="description">
+        <p>Wycena zostanie dostarczona na wskazany adres e-mailowy w ciągu 24 godzin od momentu uzupełnienia poniższego formularza zapytania.
+            Świadectwo energetyczne budynku lub lokalu użytkowego można wykonać w formie online tylko po dostarczeniu pełnej dokumentacji 
+           nieruchomości.</p>
+    </section>
+
     <main>
         <section id="order-form">
-            <h2>Formularz zamówienia</h2>
-            <form action="#">
-                <label for="name">Imię i nazwisko:</label>
-                <input type="text" id="name" name="name" required>
+            <div class="container">                             
+                <h1>Zapytanie o wycenę - budynek/lokal użytkowy:</h1>
+                
+                <h3>Dane kontaktowe</h3>
+                <div class="form-group">
+                    <div>
+                        <label for="name">Imię:</label>
+                        <input type="text" id="name" name="name">
+                    </div>
+                    <div>
+                        <label for="surname">Nazwisko:</label>
+                        <input type="text" id="surname" name="surname">
+                    </div>
+                </div>
 
-                <label for="email">Adres e-mail:</label>
-                <input type="email" id="email" name="email" required>
+                <div class="form-group">
+                    <div>
+                        <label for="email">Twój adres e-mail:</label>
+                        <input type="email" id="email" name="email">
+                    </div>
+                    <div>
+                        <label for="phone">Twój telefon:</label>
+                        <input type="text" id="phone" name="phone">
+                    </div>
+                </div>
 
-                <label for="phone">Numer telefonu:</label>
-                <input type="tel" id="phone" name="phone">
+                <h3>Dane adresowe nieruchomości</h3>
+                <div class="form-group">
+                    <div>
+                        <label for="city">Miejscowość:</label>
+                        <input type="text" id="city" name="city">
+                    </div>
+                    <div>
+                        <label for="postal">Kod pocztowy:</label>
+                        <input type="text" id="postal" name="postal">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div>
+                        <label for="street">Ulica:</label>
+                        <input type="text" id="street" name="street">
+                    </div>
+                    <div>
+                        <label for="house">Numer domu/lokalu:</label>
+                        <input type="text" id="house" name="house">
+                    </div>
+                </div>
+
+                <label for="region">Województwo:</label>
+                <select id="region" name="region">
+                    <option>Proszę wybrać opcję</option>
+                    <option>Dolnośląskie</option>
+                    <option>Kujawsko-Pomorskie</option>
+                    <option>Lubelskie</option>
+                    <option>Lubuskie</option>
+                    <option>Łódzkie</option>
+                    <option>Małopolskie</option>
+                    <option>Mazowieckie</option>
+                    <option>Opolskie</option>
+                    <option>Podkarpackie</option>
+                    <option>Podlaskie</option>
+                    <option>Pomorskie</option>
+                    <option>Śląskie</option>
+                    <option>Świętokrzyskie</option>
+                    <option>Warmińsko-Mazurskie</option>
+                    <option>Wielkopolskie</option>
+                    <option>Zachodniopomorskie</option>
+                </select>
+
+                <h2>Podstawowe informacje dotyczące nieruchomości</h2>
 
                 <label for="property-type">Rodzaj nieruchomości:</label>
                 <select id="property-type" name="property-type">
-                    <option value="flat">Mieszkanie</option>
-                    <option value="house">Dom jednorodzinny</option>
-                    <option value="commercial">Budynek/Lokal użytkowy</option>
+                    <option>Proszę wybrać opcję</option>
+                    <option>Dom jednorodzinny</option>
+                    <option>Mieszkanie</option>
+                    <option>Obiekt użytkowy</option>
                 </select>
 
-                <label for="comments">Uwagi:</label>
-                <textarea id="comments" name="comments"></textarea>
+                <div class="form-group">
+                    <div>
+                        <label for="area">Powierzchnia użytkowa budynku/lokalu [m²]:</label>
+                        <input type="number" id="area" name="area">
+                    </div>
+                    <div>
+                        <label for="floors">Ilość pięter w całej nieruchomości:</label>
+                        <input type="number" id="floors" name="floors">
+                    </div>
+                </div>
 
-                <button type="submit">Wyślij zamówienie</button>
-            </form>
+                <label for="year">Rok oddania do użytkowania:</label>
+                <input type="number" id="year" name="year">
+
+                <div class="info-text">
+                    <p>Do wykonania świadectwa charakterystyki energetycznej w formie online potrzebne będą następujące dokumenty:</p>
+                    <ul>
+                        <li>Rzuty wszystkich kondygnacji (z zaznaczonymi wymiarami ścian/okien/drzwi oraz kierunkami świata)</li>
+                        <li>Projekt budowlany budynku (z opisem użytych materiałów oraz grubościami ścian/stropów)</li>
+                        <li>Przekrój budynku z wymiarami</li>
+                        <li>Zdjęcia budynku ze wszystkich stron</li>
+                    </ul>
+                </div>
+
+                <label for="documents">Czy wyżej wymienione dokumenty są dostępne?</label>
+                <select id="documents" name="documents">
+                    <option>Proszę wybrać opcję</option>
+                    <option>Tak</option>
+                    <option>Nie</option>
+                </select>
+
+                <label for="materials">Czy znane są materiały i grubość ścian oraz stropów? (ścian nośnych oraz działowych, stropów oraz posadzki)</label>
+                <select id="materials" name="materials">
+                    <option>Proszę wybrać opcję</option>
+                    <option>Tak</option>
+                    <option>Nie</option>
+                </select>
+
+                <label for="comments">Uwagi i komentarze dla osoby wykonującej świadectwo:</label>
+                <textarea id="comments" name="comments" rows="4"></textarea>
+
+                <h2>Załączniki</h2>
+                <label>Załączniki: (do X MB, format PDF, JPG, JPEG, PNG)</label>
+                <div class="file-upload">
+                    <p><strong>Przeciągnij i upuść plik tutaj</strong></p>
+                    <p>lub</p>
+                    <p><strong>Dodaj z komputera</strong></p>
+                    <p><input type="file"></p>
+                </div>
+                
+
+                <div class="consent">
+                    <input type="checkbox" id="consent" name="consent">
+                    <label for="consent">Wyrażam zgodę na przetwarzanie moich danych osobowych, w celu i zakresie niezbędnych do realizacji zapytania.</label>
+                </div>
+
+                <div class="form-footer">
+                    <button type="submit">Wyślij formularz</button>
+                </div>
+            </div>
         </section>
     </main>
 
