@@ -59,7 +59,6 @@
       border-radius: 5px;
       background: #F0F0F0;
     }
-    /* Stylizacja checkboxów – wykluczamy je z powyższego reguły */
     .checkbox-group {
       display: flex;
       flex-direction: column;
@@ -193,18 +192,22 @@
             <input type="text" id="city" name="city" />
           </div>
           <div>
-            <label for="postal">Kod pocztowy:</label>
+            <label for="postal">Ulica:</label>
             <input type="text" id="postal" name="postal" />
           </div>
         </div>
 
         <div class="form-group">
           <div>
-            <label for="street">Ulica:</label>
-            <input type="text" id="street" name="street" />
+            <label for="street">Kod pocztowy:</label>
+            <input type="text" id="street" name="street" placeholder="np. 47-300" />
           </div>
           <div>
-            <label for="house">Numer budynku/lokalu:</label>
+            <label for="house">Numer budynku:</label>
+            <input type="text" id="house" name="house" />
+          </div>
+          <div>
+            <label for="house">Numer lokalu:</label>
             <input type="text" id="house" name="house" />
           </div>
         </div>
@@ -249,30 +252,30 @@
           </div>
           <div>
             <label for="year">Rok oddania do użytkowania:</label>
-            <input type="number" id="year" name="year" />
+            <input type="number" id="year" name="year" placeholder="np. 2024" />
           </div>
         </div>
 
         <div class="checkbox-group">
           <label class="checkbox-label">
             <input type="checkbox" name="lokal_parter" />
-            Zaznacz, jeśli lokal jest usytuowany na parterze
+            Zaznacz, jeśli lokal jest usytuowany na parterze.
           </label>
           <label class="checkbox-label">
             <input type="checkbox" name="lokal_wiecej_kondygnacji" />
-            Zaznacz, jeśli lokal posiada więcej niż jedną kondygnację
+            Zaznacz, jeśli lokal posiada więcej niż jedną kondygnację.
           </label>
           <label class="checkbox-label">
             <input type="checkbox" name="lokal_ostatnie_pietro" />
-            Zaznacz, jeśli lokal znajduje się na najwyższej kondygnacji
+            Zaznacz, jeśli lokal znajduje się na najwyższej kondygnacji.
           </label>
           <label class="checkbox-label">
             <input type="checkbox" name="lokal_balkon_tarasy" />
-            Zaznacz, jeśli lokal posiada balkon lub taras
+            Zaznacz, jeśli lokal posiada balkon lub taras.
           </label>
           <label class="checkbox-label">
             <input type="checkbox" name="budynek_termomodernizacja" />
-            Zaznacz, jeśli w budynku dokonano termomodernizacji
+            Zaznacz, jeśli w budynku dokonano termomodernizacji.
           </label>
         </div>
 
@@ -345,7 +348,7 @@
 
         <div class="form-group">
         <div>
-            <label for="window_frame">Materiał ramy okien (jeśli nie znasz, wybierz "nie wiem"):</label>
+            <label for="window_frame">Materiał ramy okien:</label>
             <select id="window_frame" name="window_frame">
             <option>Proszę wybrać opcję</option>
             <option>Nie wiem</option>
@@ -357,7 +360,7 @@
         </div>
 
         <div>
-            <label for="window_glass">Liczba szyb w oknach (jeśli nie znasz, wybierz "nie wiem"):</label>
+            <label for="window_glass">Liczba szyb w oknach:</label>
             <select id="window_glass" name="window_glass">
             <option>Proszę wybrać opcję</option>
             <option>Nie wiem</option>
@@ -368,23 +371,6 @@
             </select>
         </div>
         </div>
-
-        <div class="info-text">
-          <p>Do wykonania świadectwa charakterystyki energetycznej w formie online potrzebne będą następujące dokumenty:</p>
-          <ul>
-            <li>Rzuty wszystkich kondygnacji (z zaznaczonymi wymiarami ścian/okien/drzwi oraz kierunkami świata)</li>
-            <li>Projekt budowlany budynku (z opisem użytych materiałów oraz grubościami ścian/stropów)</li>
-            <li>Przekrój budynku z wymiarami</li>
-            <li>Zdjęcia budynku ze wszystkich stron</li>
-          </ul>
-        </div>
-
-        <label for="documents">Czy wyżej wymienione dokumenty są dostępne?</label>
-        <select id="documents" name="documents">
-          <option>Proszę wybrać opcję</option>
-          <option>Tak</option>
-          <option>Nie</option>
-        </select>
 
         <label for="materials">Czy znane są materiały i grubość ścian oraz stropów? (ścian nośnych oraz działowych, stropów oraz posadzki)</label>
         <select id="materials" name="materials">

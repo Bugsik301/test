@@ -8,6 +8,26 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        .error {
+            color: red;
+            font-size: 0.9em;
+            margin-bottom: 5px;
+        }
+        .success {
+            color: green;
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
+        #formMessage {
+            margin: 10px 0;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -30,11 +50,10 @@
         </section>
 
         <section class="contact">
-            <!-- Contact Section -->
             <div class="contact-container">
                 <div class="form-section">
                     <h1>Formularz kontaktowy</h1>
-                    <form action="#" method="post">
+                    <form action="send_mail.php" method="post" id="contactForm" >
                         <input type="text" name="name" placeholder="Imię i nazwisko" required>
                         <input type="email" name="email" placeholder="Adres e-mail" required>
                         <input type="tel" name="phone" placeholder="Numer telefonu" required>
@@ -60,7 +79,66 @@
                 </div>
             </div>
         </section>
+
+        <div id="formMessage"></div>
     </main>
 
+    <script>
+        const form = document.getElementById('contactForm');
+        const formMessage = document.getElementById('formMessage');
+    
+        form.addEventListener('submit', function(e) {
+          e.preventDefault(); 
+    
+          formMessage.innerHTML = '';
+    
+          const nameValue = form.name.value.trim();
+          const emailValue = form.email.value.trim();
+          const phoneValue = form.phone.value.trim();
+          const messageValue = form.message.value.trim();
+    
+          let errors = [];
+    
+          if (nameValue === '') {
+            errors.push('Proszę podać imię i nazwisko.');
+          }
+    
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRegex.test(emailValue)) {
+            errors.push('Proszę podać prawidłowy adres e-mail.');
+          }
+    
+          if (phoneValue.length < 9) {
+            errors.push('Numer telefonu powinien mieć co najmniej 9 znaków.');
+          }
+    
+          if (messageValue === '') {
+            errors.push('Proszę wpisać treść wiadomości.');
+          }
+    
+          if (errors.length > 0) {
+            const errorHtml = errors.map(err => `<div class="error">${err}</div>`).join('');
+            formMessage.innerHTML = errorHtml;
+            return;
+          }
+    
+          fetch('send_mail.php', {
+            method: 'POST',
+            body: new FormData(form)
+          })
+          .then(response => response.text())
+          .then(data => {
+            if (data.includes('pomyślnie')) {
+              formMessage.innerHTML = `<div class="success">${data}</div>`;
+              form.reset(); 
+            } else {
+              formMessage.innerHTML = `<div class="error">${data}</div>`;
+            }
+          })
+          .catch(error => {
+            formMessage.innerHTML = `<div class="error">Wystąpił błąd: ${error}</div>`;
+          });
+        });
+      </script>
 </body>
 </html>

@@ -35,21 +35,21 @@
       margin-top: 10px;
     }
     .form-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
     }
     .form-group div {
-    flex: 1;
-    min-width: 300px;
+      flex: 1;
+      min-width: 300px;
     }
     select {
-    width: 80%;
-    padding: 15px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background: #F0F0F0;
+      width: 80%;
+      padding: 15px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background: #F0F0F0;
     }
     input:not([type="checkbox"]), select, textarea {
       width: 80%;
@@ -59,7 +59,7 @@
       border-radius: 5px;
       background: #F0F0F0;
     }
-    /* Stylizacja checkboxów – wykluczamy je z powyższego reguły */
+    /* Stylizacja checkboxów – wykluczamy je z powyższej reguły */
     .checkbox-group {
       display: flex;
       flex-direction: column;
@@ -161,7 +161,7 @@
   <main>
     <section id="order-form">
       <div class="container">
-        <h1>Zapytanie o wycenę - budynek/lokal użytkowy:</h1>
+        <h1>Zapytanie o wycenę - domu:</h1>
         
         <h3>Dane kontaktowe</h3>
         <div class="form-group">
@@ -186,7 +186,7 @@
           </div>
         </div>
 
-        <h3>Dane adresowe budynku/lokalu użytkowego</h3>
+        <h3>Dane adresowe domu</h3>
         <div class="form-group">
           <div>
             <label for="city">Miejscowość:</label>
@@ -204,7 +204,7 @@
             <input type="text" id="street" name="street" />
           </div>
           <div>
-            <label for="house">Numer budynku/lokalu:</label>
+            <label for="house">Numer domu:</label>
             <input type="text" id="house" name="house" />
           </div>
         </div>
@@ -230,21 +230,14 @@
           <option>Zachodniopomorskie</option>
         </select>
 
-        <h2>Podstawowe informacje dotyczące budynku/lokalu użytkowego</h2>
+        <h2>Podstawowe informacje dotyczące domu</h2>
         <div class="form-group">
           <div>
-            <label for="area">Powierzchnia użytkowa budynku/lokalu [m²]:</label>
+            <label for="area">Powierzchnia użytkowa domu [m²]:</label>
             <input type="number" id="area" name="area" />
           </div>
           <div>
-            <label for="floors">Ilość pięter w całej nieruchomości:</label>
-            <input type="number" id="floors" name="floors" />
-          </div>
-        </div>
-
-        <div class="form-group">
-          <div>
-            <label for="property-type">Wysokość pomieszczeń [m]:</label>
+            <label for="height">Wysokość pomieszczeń [m]:</label>
             <input type="number" id="height" name="height" />
           </div>
           <div>
@@ -255,146 +248,183 @@
 
         <div class="checkbox-group">
           <label class="checkbox-label">
-            <input type="checkbox" name="lokal_parter" />
-            Zaznacz, jeśli lokal jest usytuowany na parterze
+            <input type="checkbox" name="dom_pomieszczenia_nieogrzewane" />
+            Zaznacz, jeśli dom posiada nieogrzewane pomieszczenia.
           </label>
           <label class="checkbox-label">
-            <input type="checkbox" name="lokal_wiecej_kondygnacji" />
-            Zaznacz, jeśli lokal posiada więcej niż jedną kondygnację
+            <input type="checkbox" name="dom_niezgodny_projekt" />
+            Zaznacz, jeśli dom nie został zbudowany dokładnie według projektu.
           </label>
           <label class="checkbox-label">
-            <input type="checkbox" name="lokal_ostatnie_pietro" />
-            Zaznacz, jeśli lokal znajduje się na najwyższej kondygnacji
+            <input type="checkbox" name="dom_znane_sciany_stropy" />
+            Zaznacz, jeśli znane są materiały i grubość ścian oraz stropów.
           </label>
           <label class="checkbox-label">
-            <input type="checkbox" name="lokal_balkon_tarasy" />
-            Zaznacz, jeśli lokal posiada balkon lub taras
-          </label>
-          <label class="checkbox-label">
-            <input type="checkbox" name="budynek_termomodernizacja" />
-            Zaznacz, jeśli w budynku dokonano termomodernizacji
+            <input type="checkbox" name="dom_znane_izolacje" />
+            Zaznacz, jeśli znane są materiały i grubość izolacji ścian zewnętrznych.
           </label>
         </div>
 
-        <label for="exposure">Ekspozycja lokalu:</label>
-        <select id="exposure" name="exposure">
-          <option>Proszę wybrać opcję</option>
-          <option>lokal jednostronny</option>
-          <option>lokal dwustronny</option>
-          <option>lokal trzystronny</option>
-          <option>lokal czterostronny</option>
-        </select>
-
-        <h3>Pozostałe dane do obliczenia świadectwa</h3>
+        
+        <h2>Ogrzewanie</h2>
 
         <div class="form-group">
-        <div>
-            <label for="heating_type">Rodzaj ogrzewania:</label>
-            <select id="heating_type" name="heating_type">
-            <option>Proszę wybrać opcję</option>
-            <option>Centralne - kocioł gazowy</option>
-            <option>Centralne - kocioł węglowy</option>
-            <option>Centralne - kocioł na pellet</option>
-            <option>Pompa ciepła</option>
-            <option>Ogrzewanie elektryczne</option>
-            <option>Ogrzewanie miejskie</option>
-            <option>Inne</option>
+          <div>
+            <label for="main_heating_source">Typ głównego źródła ogrzewania:</label>
+            <select id="main_heating_source" name="main_heating_source">
+              <option>Proszę wybrać opcję</option>
+              <option>Sieć miejska</option>
+              <option>Kocioł węglowy</option>
+              <option>Kocioł na ekogroszek</option>
+              <option>Kocioł na biomasę</option>
+              <option>Kocioł gazowy w kotłowni</option>
+              <option>Piec kaflowy</option>
+              <option>Grzejnik elektryczny</option>
+              <option>Pompa ciepła</option>
+              <option>Inne</option>
             </select>
-        </div>
-
-        <div>
-            <label for="hot_water_heating">Rodzaj ogrzewania ciepłej wody:</label>
-            <select id="hot_water_heating" name="hot_water_heating">
-            <option>Proszę wybrać opcję</option>
-            <option>Centralne - kocioł gazowy</option>
-            <option>Centralne - kocioł węglowy</option>
-            <option>Centralne - kocioł na pellet</option>
-            <option>Pompa ciepła</option>
-            <option>Ogrzewanie elektryczne</option>
-            <option>Ogrzewanie miejskie</option>
-            <option>Inne</option>
-            </select>
-        </div>
+          </div>
+          <div>
+            <label for="heating_details">Opis sposobu ogrzewania (np. rodzaj pieca / pompy ciepła):</label>
+            <input
+              type="text"
+              id="heating_details"
+              name="heating_details"
+              placeholder="np. kocioł gazowy, pompa ciepła z zasobnikiem..."
+            />
+          </div>
         </div>
 
         <div class="form-group">
-        <div>
-            <label for="radiators">Rodzaj zainstalowanych grzejników:</label>
-            <select id="radiators" name="radiators">
-            <option>Proszę wybrać opcję</option>
-            <option>Grzejniki płytowe</option>
-            <option>Grzejniki żeliwne</option>
-            <option>Grzejniki aluminiowe</option>
-            <option>Ogrzewanie podłogowe</option>
-            <option>Inne</option>
+          <div>
+            <label for="other_heating_sources">
+              Czy są dodatkowe źródła ogrzewania? Jeśli tak, podaj procentowy udział:
+            </label>
+            <input
+              type="text"
+              id="other_heating_sources"
+              name="other_heating_sources"
+              placeholder="np. kominek - 30%"
+            />
+          </div>
+          <div>
+            <label for="heating_radiators">System grzewczy / rodzaj grzejników:</label>
+            <select id="heating_radiators" name="heating_radiators">
+              <option>Proszę wybrać opcję</option>
+              <option>Grzejniki płytowe</option>
+              <option>Grzejniki żeliwne</option>
+              <option>Grzejniki aluminiowe</option>
+              <option>Ogrzewanie podłogowe</option>
+              <option>Inne</option>
             </select>
-        </div>
-
-        <div>
-            <label for="ventilation">Rodzaj wentylacji:</label>
-            <select id="ventilation" name="ventilation">
-            <option>Proszę wybrać opcję</option>
-            <option>Grawitacyjna</option>
-            <option>Mechaniczna wywiewna</option>
-            <option>Mechaniczna nawiewno-wywiewna</option>
-            <option>Rekuperacja</option>
-            <option>Inna</option>
-            </select>
-        </div>
+          </div>
         </div>
 
         <div class="form-group">
-        <div>
-            <label for="window_frame">Materiał ramy okien (jeśli nie znasz, wybierz "nie wiem"):</label>
-            <select id="window_frame" name="window_frame">
-            <option>Proszę wybrać opcję</option>
-            <option>Nie wiem</option>
-            <option>PCV</option>
-            <option>Drewno</option>
-            <option>Aluminium</option>
-            <option>Inne</option>
+          <div>
+            <label for="ventilation_type">Typ wentylacji:</label>
+            <select id="ventilation_type" name="ventilation_type">
+              <option>Proszę wybrać opcję</option>
+              <option>Grawitacyjna</option>
+              <option>Mechaniczna wywiewna</option>
+              <option>Mechaniczna nawiewno-wywiewna</option>
+              <option>Rekuperacja</option>
+              <option>Inna</option>
             </select>
+          </div>
+          <div>
+            <label for="window_frames">Materiał ramy okiennej (jeśli nie wiesz, wybierz "nie wiem"):</label>
+            <select id="window_frames" name="window_frames">
+              <option>Proszę wybrać opcję</option>
+              <option>Nie wiem</option>
+              <option>PCV</option>
+              <option>Drewno</option>
+              <option>Aluminium</option>
+              <option>Inne</option>
+            </select>
+          </div>
         </div>
 
-        <div>
-            <label for="window_glass">Liczba szyb w oknach (jeśli nie znasz, wybierz "nie wiem"):</label>
+        <div class="form-group">
+          <div>
+            <label for="window_glass">Liczba szyb w oknach (jeśli nie wiesz, wybierz "nie wiem"):</label>
             <select id="window_glass" name="window_glass">
-            <option>Proszę wybrać opcję</option>
-            <option>Nie wiem</option>
-            <option>Jednoszybowe</option>
-            <option>Dwuszybowe</option>
-            <option>Trzyszybowe</option>
-            <option>Czteroszybowe</option>
+              <option>Proszę wybrać opcję</option>
+              <option>Nie wiem</option>
+              <option>Jednoszybowe</option>
+              <option>Dwuszybowe</option>
+              <option>Trzyszybowe</option>
+              <option>Czteroszybowe</option>
             </select>
-        </div>
-        </div>
-
-        <div class="info-text">
-          <p>Do wykonania świadectwa charakterystyki energetycznej w formie online potrzebne będą następujące dokumenty:</p>
-          <ul>
-            <li>Rzuty wszystkich kondygnacji (z zaznaczonymi wymiarami ścian/okien/drzwi oraz kierunkami świata)</li>
-            <li>Projekt budowlany budynku (z opisem użytych materiałów oraz grubościami ścian/stropów)</li>
-            <li>Przekrój budynku z wymiarami</li>
-            <li>Zdjęcia budynku ze wszystkich stron</li>
-          </ul>
+          </div>
         </div>
 
-        <label for="documents">Czy wyżej wymienione dokumenty są dostępne?</label>
-        <select id="documents" name="documents">
-          <option>Proszę wybrać opcję</option>
-          <option>Tak</option>
-          <option>Nie</option>
-        </select>
+        <h2>Ciepła woda użytkowa</h2>
 
-        <label for="materials">Czy znane są materiały i grubość ścian oraz stropów? (ścian nośnych oraz działowych, stropów oraz posadzki)</label>
-        <select id="materials" name="materials">
-          <option>Proszę wybrać opcję</option>
-          <option>Tak</option>
-          <option>Nie</option>
-        </select>
+        <div class="form-group">
+          <div>
+            <label for="main_hotwater_source">Główne źródło ciepłej wody:</label>
+            <select id="main_hotwater_source" name="main_hotwater_source">
+              <option>Proszę wybrać opcję</option>
+              <option>Sieć miejska</option>
+              <option>Kocioł węglowy</option>
+              <option>Kocioł gazowy</option>
+              <option>Kocioł na biomasę</option>
+              <option>Elektryczny podgrzewacz</option>
+              <option>Pompa ciepła</option>
+              <option>Inne</option>
+            </select>
+          </div>
+          <div>
+            <label for="hotwater_details">Opis sposobu podgrzewania ciepłej wody (np. model pieca):</label>
+            <input
+              type="text"
+              id="hotwater_details"
+              name="hotwater_details"
+              placeholder="np. kocioł gazowy dwufunkcyjny..."
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div>
+            <label for="other_hotwater_sources">
+              Czy istnieją dodatkowe źródła ciepłej wody? Jeśli tak, określ ich udział:
+            </label>
+            <input
+              type="text"
+              id="other_hotwater_sources"
+              name="other_hotwater_sources"
+              placeholder="np. bojler elektryczny - 20%"
+            />
+          </div>
+        </div>
+
+        <div class="checkbox-group">
+            <label class="checkbox-label">
+              <input type="checkbox" name="dom_pomieszczenia_nieogrzewane" />
+              Zaznacz, jeśli przewody instalacji ciepłej wody są zaizolowane.
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" name="dom_niezgodny_projekt" />
+              Zaznacz, jeśli jest cyrkulacja ciepłej wody użytkowej.
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" name="dom_znane_sciany_stropy" />
+              Zaznacz, jeśli posiadasz zbiornik ciepłej wody użytkowej.
+            </label>
+            <label class="checkbox-label">
+                <input type="checkbox" name="dom_znane_sciany_stropy" />
+                Zaznacz, jeśli dom posiada klimatyzację.
+            </label>
+            <label class="checkbox-label">
+                <input type="checkbox" name="dom_znane_sciany_stropy" />
+                Zaznacz, jeśli dom posiada instlację fotowoltaiczną.
+            </label>
+          </div>
 
         <label for="comments">Uwagi i komentarze dla osoby wykonującej świadectwo:</label>
-        <textarea id="comments" name="comments" rows="4"></textarea>
+        <textarea id="comments" name="comments" rows="5" placeholder="Dodatkowe informacje/uwagi"></textarea>
 
         <h2>Załączniki</h2>
         <label>Załączniki: (do X MB, format PDF, JPG, JPEG, PNG)</label>
